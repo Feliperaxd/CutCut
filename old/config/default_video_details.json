@@ -1,0 +1,58 @@
+{
+    "not_valid": {
+        "tag": "unknown",
+        "url": null,
+        "title": "Your YouTube URL is not valid!",
+        "duration": "00",
+        "thumbnail": "../assets/thumbnail-not-valid.svg",
+        "view_count": "00",
+        "live_status": "unknown",
+        "channel_tag": "unknown",
+        "channel_url": "unknown",
+        "channel_name": "--------",
+        "channel_is_verified": false,
+        "error_code": "<not-valid>"
+    },
+    "not_allowed": {
+        "tag": "unknown",
+        "url": null,
+        "title": "Live streams still active are not allowed!",
+        "duration": "00",
+        "thumbnail": "../assets/thumbnail-not-allowed.svg",
+        "view_count": "00",
+        "live_status": "unknown",
+        "channel_tag": "unknown",
+        "channel_url": "unknown",
+        "channel_name": "--------",
+        "channel_is_verified": false,
+        "error_code": "<not-allowed>"
+    },
+    "not_available": {
+        "tag": "unknown",
+        "url": null,
+        "title": "Title not available!",
+        "duration": "00",
+        "thumbnail": "../assets/thumbnail-not-available.svg",
+        "view_count": "00",
+        "live_status": "unknown",
+        "channel_tag": "unknown",
+        "channel_url": "unknown",
+        "channel_name": "Channel name not available!",
+        "channel_is_verified": false,
+        "error_code": "<not-available>"
+    },
+    "unknown_error": {
+        "tag": "unknown",
+        "url": null,
+        "title": "Server Error, please refresh your page!",
+        "duration": "00",
+        "thumbnail": "../assets/thumbnail-not-valid.svg",
+        "view_count": "00",
+        "live_status": "unknown",
+        "channel_tag": "unknown",
+        "channel_url": "unknown",
+        "channel_name": "--------",
+        "channel_is_verified": false,
+        "error_code": "<unknown-error>"
+    }
+}

@@ -1,0 +1,126 @@
+@import url(color-pallete.css);
+
+
+.video-card {
+    width: 25vw;
+    min-width: 250px;
+    overflow: hidden;
+    aspect-ratio: 6 / 5;
+}
+
+.video-thumbnail-box {
+    /* -- Box Model -- */
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1.78 / 1;
+    border-radius: 10px; /* TODO: Change to proportional */
+    
+    /* -- Layout -- */ 
+    position: relative;
+}
+
+.video-thumbnail-box > img {
+    width: 100%;
+    aspect-ratio: 1.78 / 1;
+}
+
+.duration-time {
+    /* -- Box Model -- */
+    padding: 5px; /* TODO: Change to proportional */
+    border-radius: 5px; /* TODO: Change to proportional */
+
+    /* -- Layout -- */
+    right: 10px;
+    bottom: 10px;
+    position: absolute;
+    
+    /* -- Typography -- */
+    color: var(--white-clr);
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    
+    /* -- Visual -- */
+    opacity: 0.9;
+    background-color: var(--black-clr);
+}
+
+.add-cart-btn {
+    /* -- Box Model -- */
+    width: 101%;
+    height: 101%;
+    border: none;
+
+    /* -- Layout -- */   
+    top: 0;
+    left: 0;
+    position: absolute;
+
+    /* -- Visual -- */
+    opacity: 0%;
+    background-color: var(--primary-clr);
+
+    /* -- Miscellaneous -- */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.add-cart-btn:disabled,
+.add-cart-btn:disabled:active {
+    /* -- Visual -- */
+    background-color: var(--gray-clr);
+    
+    /* -- Miscellaneous -- */
+    cursor: not-allowed;
+}
+
+.add-cart-btn:hover,
+.add-cart-btn:disabled:hover {
+    opacity: 80%;
+}
+
+.add-cart-btn:active {
+    background-color: var(--secondary-clr);
+}
+
+.add-cart-btn > img {
+    width: 25%;
+    aspect-ratio: 1 / 1;
+}
+
+.video-info-box {
+    width: 100%;
+    aspect-ratio: 4 / 1;
+    margin-top: 2%;
+}
+
+.video-title-box, 
+.video-stats-box {
+    width: 100%;
+    padding: 2%;
+}
+
+.video-title-box > p {
+    /* -- Box Model -- */
+    width: 100%;
+    overflow: hidden;
+
+    /* -- Typography -- */
+    color: var(--white-clr);
+    font-size: 1em;
+    max-height: 2.2em;
+    line-height: 1.1em;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-overflow: ellipsis;
+}
+
+.video-stats-box > p {
+    /* -- Box Model -- */
+    overflow: hidden;
+
+    /* -- Typography -- */
+    color: var(--gray-clr);
+    font-size: 0.875em; 
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+}

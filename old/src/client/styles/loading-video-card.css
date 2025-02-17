@@ -1,0 +1,59 @@
+@import url('color-pallete.css');
+
+
+.loading-video-card {
+    /* -- Box Model --  */
+    width: 25vw;
+    overflow: hidden;
+    min-width: 250px;
+    aspect-ratio: 6 / 5;
+    border-radius: 10px;
+
+    /* -- Layout -- */
+    position: relative;
+
+    /* -- Visual -- */
+    background-color: var(--background-1-clr);
+}
+
+.loading-video-card::before {
+    /* -- Box Model --  */
+    width: 200%;
+    height: 150px;
+    content: '';
+
+    /* -- Layout -- */
+    top: 25%;
+    left: -50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    
+    /* -- Visual -- */
+    background-color: var(--primary-clr);
+
+    /* -- Miscellaneous -- */
+    animation: loading 3s infinite linear;
+    will-change: transform;
+}
+
+.loading-video-card::after {
+    /* -- Box Model --  */
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    content: '';
+    border-radius: 8px;
+
+    /* -- Layout -- */
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    /* -- Visual -- */
+    background-color: var(--background-1-clr);
+}
+
+@keyframes loading {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}

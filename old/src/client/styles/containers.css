@@ -1,0 +1,42 @@
+.horizontal-container, 
+.vertical-container,
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.horizontal-container {
+    flex-direction: row;
+}
+
+.vertical-container {
+    flex-direction: column;
+}
+
+.wrapper {
+    height: 100%;
+    width: 95%;
+}
+.wrapper > div:nth-child(2) {
+    margin: 0 auto;
+}
+
+.grid-container {
+    gap: 30px;
+    display: grid;
+    grid-auto-rows: auto; 
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+@media (max-width: 1200px) {
+    .grid-container {grid-template-columns: repeat(3, 1fr);}
+}
+
+@media (max-width: 900px) {
+    .grid-container {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (max-width: 600px) {
+    .grid-container {grid-template-columns: 1fr;}
+}

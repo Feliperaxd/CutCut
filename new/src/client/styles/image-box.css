@@ -1,0 +1,9 @@
+@import url(color-palette.css);
+
+#image-box {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: absolute;
+    background-color: var(--primary-bg);
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "rule": "/user/<string:user_tag>/search",
+        "methods": ["GET"],
+        "endpoint": "user_search",
+        "view_func": "handle_search"
+    },
+    {
+        "rule": "/user/<string:user_tag>/data",
+        "methods": ["GET", "POST"],
+        "endpoint": "user_data",
+        "view_func": "handle_user_data"
+    },
+    {
+        "rule": "/user/<string:user_tag>/heartbeat",
+        "methods": ["POST", "PATCH"],
+        "endpoint": "user_heartbeat",
+        "view_func": "handle_heartbeat"
+    }
+]

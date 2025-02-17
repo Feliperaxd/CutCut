@@ -1,0 +1,55 @@
+@import url(color-pallete.css);
+
+
+.search-bar {
+    /* -- Box Model --  */
+    width: 50%;
+    outline: solid 1px var(--gray-clr);
+    min-width: 250px;
+    min-height: 25px;
+    max-width: 650px;
+    max-height: 35px;
+    aspect-ratio: 20 / 1;
+    border-radius: 15px;
+
+    /* -- Layout -- */
+    position: relative;
+    justify-content: flex-start;
+    
+    /* -- Miscellaneous -- */
+    transition: 0.2s ease-in-out;
+}
+
+.search-bar:focus-within {
+    outline: solid 1px var(--primary-clr);
+}
+
+.search-bar > input {
+    /* -- Box Model --  */
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    overflow: hidden;
+
+    /* -- Typography -- */
+    color: var(--white-clr);
+    caret-color: var(--primary-clr);
+
+    /* -- Visual -- */
+    background-color: transparent;
+}
+
+.search-bar > input, 
+.search-bar > input::placeholder {
+    font-size: clamp(0.7rem, 1.1vw, 1rem);
+    font-family: 'Roboto', Arial;
+}
+
+.search-bar > input::placeholder {
+    color: var(--gray-clr);
+}
+
+.search-bar > input:focus::placeholder {
+    opacity: 0;
+}

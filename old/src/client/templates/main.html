@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtoDrop</title>
+
+    <link rel="stylesheet" href="../styles/search-bar.css">
+    <link rel="stylesheet" href="../styles/main-structures.css">
+    <link rel="stylesheet" href="../styles/containers.css">
+    <link rel="stylesheet" href="../styles/loading-video-card.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/globals.css">
+    <link rel="stylesheet" href="../styles/dropdown-menu.css">
+    <link rel="stylesheet" href="../styles/video-card.css">
+    <link rel="stylesheet" href="../styles/loading-screen.css">
+    <link rel="stylesheet" href="../styles/warnings.css">
+    <link rel="stylesheet" href="../styles/cart-menu.css">
+    <link rel="stylesheet" href="..//styles/logo.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+</head>
+<body>
+    <main class="vertical-container">
+        <header class="horizontal-container">
+            <div class="wrapper">
+                <div class="logo"></div>
+                <div class="horizontal-container search-bar">
+                    <button class="default-icon-btn" style="--btn-mask:url(../assets/lupe-icon.svg);" id="search-btn"></button>
+                    <input type="text" id="search-input" autocomplete="off" spellcheck="false" placeholder="Search on YouTube">
+                    <button class="default-icon-btn" style="--btn-mask:url(../assets/dropdown-menu-icon.svg);" id="filter-menu-btn"></button>
+                </div>
+                <button class="default-icon-btn" style="--btn-mask:url(../assets/cart-icon.svg);" id="open-cart-menu-btn"></button>
+            </div>
+        </header>
+        <section class="vertical-container">
+            <div class="grid-container" id="video-cards-box">
+            </div>
+        </section>
+        <footer class="horizontal-container"></footer>
+
+        <div id="filter-dropdown-menu">
+            <div class="vertical-container">
+                <label class="horizontal-container" for="max-results-filter">
+                    Max Results
+                    <hr>
+                    <input type="number" id="max-results-filter" name="max-results" value="50">
+                </label>
+            </div>
+        </div>
+        
+    
+        <div class="vertical-container" id="loading-screen"></div>
+    </main>
+    
+    <div id="error-warning">
+        <p></p>
+    </div>
+    <div id="success-warning">
+        <p></p>
+    </div>
+    
+    <div id="cart-menu">
+        <button class="default-icon-btn" style="--btn-mask:url(../assets/dropdown-menu-icon.svg);" id="close-cart-menu-btn"></button>
+        <p>Your Cart!</p>
+        <div id="cart-list">
+
+        </div>
+    </div>
+    
+    <script class="default-icon-btn" type="module" src="../sripts/events.js"></script>
+</body>
+</html>

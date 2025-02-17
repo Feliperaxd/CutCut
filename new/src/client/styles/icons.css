@@ -1,0 +1,15 @@
+.masked-icon {
+    mask: var(--mask) no-repeat;
+    mask-size: cover;
+    -webkit-mask: var(--mask) no-repeat;
+    -webkit-mask-size: cover;
+}
+
+.inactive-icon {
+    background-color: var(--gray-clr);
+}
+
+.file-icon {
+    width: 100px;
+    aspect-ratio: 1 / 1;
+}

@@ -1,0 +1,57 @@
+@import url(color-pallete.css);
+
+
+#filter-dropdown-menu {
+    width: 174px;
+    height: 60px;
+    
+    position: absolute;
+
+    background-size: cover;
+    background-image: url(../assets/dropdown-menu-background.svg);
+    background-repeat: no-repeat;
+    
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+#filter-dropdown-menu > div {
+    width: 100%;
+    height: 100%;
+    padding-top: 18px;
+}
+
+#filter-dropdown-menu input[type="number"] {
+    width: 25px;
+    border: none;
+    outline: none;   
+    padding-bottom: 1px;
+    
+    background-color: transparent;
+
+    caret-color: var(--primary-clr);
+}
+
+#filter-dropdown-menu hr {
+    border: none;
+    width: 1px;
+    height: 15px;
+    background-color: var(--primary-clr);
+    margin: 0 10px 0 10px;
+}
+
+#filter-dropdown-menu input[type="number"]:focus {
+    border-bottom: 1px solid var(--primary-clr);
+}
+
+#filter-dropdown-menu input[type="number"]::-webkit-outer-spin-button,
+#filter-dropdown-menu input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#filter-dropdown-menu * {
+    color: var(--white-clr);
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Roboto', arial;
+}

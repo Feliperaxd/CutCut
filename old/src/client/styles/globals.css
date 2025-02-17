@@ -1,0 +1,21 @@
+@import url(color-pallete.css);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+  
+::selection {
+    /* -- Typography -- */
+    color: var(--white-clr);
+    
+    /* -- Visual -- */
+    background-color: var(--secondary-clr);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

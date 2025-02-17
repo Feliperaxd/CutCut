@@ -1,0 +1,46 @@
+main {
+    width: 100vw;
+}
+
+header,
+footer {
+    width: 100%;
+    height: 15vh;
+}
+
+header {
+    justify-content: space-between;
+    background-color: var(--background-1-clr);
+}
+
+
+footer {
+    background-color: var(--background-2-clr);
+}
+
+section {
+    /* -- Box Model --  */
+    width: 100%;
+    min-height: 85vh;
+
+    /* -- Visual -- */
+    background-color: var(--background-1-clr);
+}
+
+#video-cards-box {
+    padding: 20px;
+    min-height: 70vh;
+}
+
+@media (max-width: 1000px) {
+    header,
+    footer {
+        height: 10vh;
+    }
+}
+
+/* -- Box Model --  */
+/* -- Layout -- */
+/* -- Typograph -- */
+/* -- Visual -- */
+/* -- Miscellaneous -- */

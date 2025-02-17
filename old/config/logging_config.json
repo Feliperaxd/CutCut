@@ -1,0 +1,71 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "standard": {
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "stream": "ext://sys.stdout"
+        },
+        "class_app": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "filename": "logs/app.log",
+            "maxBytes": 1048576,
+            "backupCount": 2
+        },
+        "class_pipeline": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "filename": "logs/pipeline.log",
+            "maxBytes": 1048576,
+            "backupCount": 2
+        },
+        "class_data_service": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "filename": "logs/data_service.log",
+            "maxBytes": 1048576,
+            "backupCount": 2
+        },
+        "class_search_engine": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "DEBUG",
+            "formatter": "standard",
+            "filename": "logs/search_engine.log",
+            "maxBytes": 1048576,
+            "backupCount": 2
+        }
+    },
+    "loggers": {
+        "app": {
+            "handlers": ["console", "class_app"],
+            "level": "DEBUG",
+            "propagate": false
+        },
+        "pipeline": {
+            "handlers": ["console", "class_pipeline"],
+            "level": "DEBUG",
+            "propagate": false
+        },
+        "data_service": {
+            "handlers": ["console", "class_data_service"],
+            "level": "DEBUG",
+            "propagate": false
+        },
+        "search_engine": {
+            "handlers": ["console", "class_search_engine"],
+            "level": "DEBUG",
+            "propagate": false
+        }
+    }
+}

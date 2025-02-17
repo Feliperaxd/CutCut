@@ -1,0 +1,26 @@
+@import url(color-pallete.css);
+
+
+#error-warning,
+#success-warning {
+    top: -50%;
+    left: 50%;
+    min-width: 300px;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    transition: .5s cubic-bezier(.47,1.64,.41,.8);;
+    color: var(--white-clr);
+    text-align: center;
+    font-family: 'Roboto', 'times new roman'
+}
+
+#error-warning {
+    background-color: var(--error-clr);
+}
+
+#success-warning {
+    background-color: var(--success-clr);
+}
+

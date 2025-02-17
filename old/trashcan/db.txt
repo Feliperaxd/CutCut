@@ -1,0 +1,11 @@
+users
+id ip city region country 
+    
+videos
+id tag title duration view_count channel_name channel_is_verified
+
+user_searches
+id user_id query max_results
+
+cart_items
+id user_id video_id

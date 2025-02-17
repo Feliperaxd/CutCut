@@ -1,0 +1,9 @@
+@import url(color-palette.css);
+
+#drop-area {
+    width: 35vw;
+    aspect-ratio: 16 / 9;
+
+    border: 2px solid var(--primary-gray);
+    border-radius: 16px;
+}

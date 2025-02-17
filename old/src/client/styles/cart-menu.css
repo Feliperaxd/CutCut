@@ -1,0 +1,10 @@
+#cart-menu {
+    width: 50vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    right: -50vw;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: red;
+}

@@ -1,0 +1,20 @@
+@import url(color-pallete.css);
+
+::-webkit-scrollbar {
+    width: 0;
+    transition: .3s cubic-bezier(.27,1.4,.69,0);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-1-clr);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-clr);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-clr);
+}

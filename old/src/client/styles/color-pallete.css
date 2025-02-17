@@ -1,0 +1,16 @@
+:root{
+    --gray-clr: #AAAAAA;
+    --white-clr: #F1F1F1;
+    --black-clr: #0F0F0F;
+    --error-clr: #ff4848;
+    --success-clr: #29884d;
+
+    --primary-clr: #FF2B44;
+    --secondary-clr: #ee485b;
+    --tertiary-clr: #dfa7a7;
+    --background-1-clr: var(--black-clr);
+    --background-2-clr: #1C1C1C;
+    --foreground-1-clr: var(--white-clr);
+
+    --primary-grad: linear-gradient(50deg, var(--primary-clr), var(--secondary-clr));
+}

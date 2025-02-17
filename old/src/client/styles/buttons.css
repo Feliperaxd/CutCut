@@ -1,0 +1,76 @@
+@import url(color-pallete.css);
+
+
+/* -- Defaults -- */
+.default-icon-btn {
+    border: none;
+    aspect-ratio: 1 / 1;
+
+    /* -- Visual -- */
+    mask: var(--btn-mask) no-repeat;
+    mask-size: cover;
+    -webkit-mask: var(--btn-mask) no-repeat;
+    -webkit-mask-size: cover;
+    background-color: var(--gray-clr);
+
+    /* -- Miscellaneous -- */
+    transition: 0.2s ease-in-out;
+}
+
+.default-icon-btn:hover {
+    /* -- Box Model --  */
+    scale: 1.2;
+
+    /* -- Visual -- */
+    background-color: var(--primary-clr);
+    
+    /* -- Miscellaneous -- */
+    cursor: pointer;
+}
+
+.default-icon-btn:active {
+    scale: 1;
+}
+
+
+/* -- Search Bar Buttons -- */
+#search-btn {
+    height: 50%;
+    margin: 0 max(10px, 2.2%) 0 max(10px, 2.2%);
+    
+}
+
+#filter-menu-btn {
+    /* -- Box Model --  */
+    height: 70%;
+    
+    /* -- Layout -- */
+    top: 50%;
+    right: max(10px, 2.2%);
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+}
+
+#filter-menu-btn.open {
+    top: 50%;
+    right: max(10px, 2.2%);
+    transform: translateY(-50%) rotateX(180deg);
+}
+
+.search-bar:focus-within > #search-btn,
+.search-bar:focus-within > #filter-menu-btn {
+    background-color: var(--primary-clr);
+}
+
+#open-cart-menu-btn {
+    height: 40%;
+    aspect-ratio: 1 / 1;  
+}
+
+#close-cart-menu-btn {
+    width: 7%;
+    aspect-ratio: 1 / 1;
+
+    transform: rotateZ(-90deg);
+}

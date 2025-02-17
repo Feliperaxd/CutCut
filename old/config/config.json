@@ -1,0 +1,5 @@
+{
+    "heartbeatMaxTime": "90",
+    "heartbeatInterval": "60",
+    "heartbeatCheckInterval": "30"
+}
