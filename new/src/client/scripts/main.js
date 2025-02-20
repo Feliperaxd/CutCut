@@ -2,16 +2,17 @@ import { Renderers } from "./renderers.js";
 import { Unrenderers } from "./unrenderers.js";
 import { ImageController } from "./imageController.js";
 
-const mainImage = document.getElementById('main-image');
-const imgInput = document.getElementById('image-input');
-const imageController = new ImageController(mainImage);
-imageController.initPinchZoom();
-imageController.initScrollZoom();
+const imageElement = document.getElementById('main-image');
+const imageInput = document.getElementById('image-input');
+const imageBox = document.getElementById('image-box');
+
+const imageController = new ImageController(imageBox, imageElement);
+imageController.initEvents();
 
 
-imgInput.addEventListener('change', function(event) {
+imageInput.addEventListener('change', function(event) {
     Unrenderers.removeDropArea();
-    Renderers.displayImage(event.target.files[0]);
+    imageController.loadImage(event.target.files[0]);
 });
 
 

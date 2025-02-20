@@ -7,3 +7,7 @@
     position: absolute;
     background-color: var(--primary-bg);
 }
+
+#image-box > img{
+    position: absolute;
+}

@@ -1,49 +1,70 @@
 class ImageController {
-    constructor(image, scale = 1, minScale = 0.25, maxScale = 5, stepScale = 0.1) {
-        this.image = image;
+    
+    constructor(box, element, url = undefined, scale = 1, minScale = 0.25, maxScale = 5, stepScale = 0.1) {
+        this.element = element;
+        this.box = box;
+        this.url = url;
         this.scale = scale;
         this.minScale = minScale;
         this.maxScale = maxScale;
         this.stepScale = stepScale;
-        this.isDragging = false;
         this.position = { x: 0, y: 0 };
+        this.isDragging = false;
         this.touches = [];
     }
 
-    initScrollZoom() {
-        document.addEventListener('wheel', (event) => {
-            if (event.ctrlKey || event.metaKey) {
-                this.handleZoom(event);
-            }
-        });
+    initEvents() {
+        document.addEventListener('wheel', (event) => this.wheelMove(event), { passive: false });
+        document.addEventListener('mousedown', (event) => this.mouseDown(event), { passive: false });
+        document.addEventListener('touchstart', (event) => this.touchStart(event), { passive: false });
+        document.addEventListener('touchmove', (event) => this.touchMove(event), { passive: false });
+        document.addEventListener('touchend', () => this.touchEnd());
     }
 
-    initPinchZoom() {
-        document.addEventListener('touchstart', (event) => this.handleTouchStart(event), { passive: false });
-        document.addEventListener('touchmove', (event) => this.handleTouchMove(event), { passive: false });
-        document.addEventListener('touchend', () => this.handleTouchEnd());
+    loadImage(image) {
+        this.url = URL.createObjectURL(image);
+        
+        this.box.style.display = `flex`;
+        this.element.src = this.url;
+
+        this.element.onload = () => {
+            let boxWidth = parseFloat(getComputedStyle(this.box).width);
+            let boxHeight = parseFloat(getComputedStyle(this.box).height);
+            
+            this.position = {
+                x: (boxWidth - this.element.naturalWidth) / 2,
+                y: (boxHeight - this.element.naturalHeight) / 2
+            };
+            this.applyPosition(this.position.x, this.position.y);
+        };
     }
 
     zoomIn() {
-        this.scale = this.clampScale(this.scale + this.stepScale);
-        this.applyTransform();
+        this.scale += this.stepScale;
+        this.applyScale(this.scale);
     }
 
     zoomOut() {
-        this.scale = this.clampScale(this.scale - this.stepScale);
-        this.applyTransform();
+        this.scale -= this.stepScale;
+        this.applyScale(this.scale);
     }
 
     clampScale(scale) {
         return Math.min(Math.max(scale, this.minScale), this.maxScale);
     }
 
-    applyTransform() {
-        this.image.style.transform = `scale(${this.scale})`;
+    applyScale(scale) {
+        this.scale = this.clampScale(scale);
+        this.element.style.transform = `scale(${this.scale})`;
+    }
+
+    applyPosition(x, y) {
+        this.position = { x, y };
+        this.element.style.left = `${this.position.x}px`;
+        this.element.style.top = `${this.position.y}px`;
     }
 
     handleZoom(event) {
-        event.preventDefault();
         if (event.deltaY < 0) {
             this.zoomIn();
         } else {
@@ -51,18 +72,44 @@ class ImageController {
         }
     }
 
-    handleTouchStart(event) {
+    moveY(value) {
+
+    }
+
+    moveX(value) {
+
+    }
+
+    handleMovement(event) {
+        
+    }
+
+    mouseDown(event) {
+        if (event === 1) {
+            event.preventDefault();
+            this.handleMovement(event);
+        }
+    }
+
+    wheelMove(event) {
+        if (event.ctrlKey || event.metaKey) {
+            event.preventDefault();
+            this.handleZoom(event);
+        }
+    }
+
+    touchStart(event) {
         if (event.touches.length === 2) {
             this.touches = [...event.touches];
         }
     }
 
-    handleTouchMove(event) {
+    touchMove(event) {
         if (event.touches.length === 2) {
             event.preventDefault();
             const newTouches = [...event.touches];
-            const oldDistance = this.getDistance(this.touches[0], this.touches[1]);
-            const newDistance = this.getDistance(newTouches[0], newTouches[1]);
+            const oldDistance = this.getTouchDistance(this.touches[0], this.touches[1]);
+            const newDistance = this.getTouchDistance(newTouches[0], newTouches[1]);
 
             if (newDistance > oldDistance) {
                 this.zoomIn();
@@ -73,12 +120,12 @@ class ImageController {
             this.touches = newTouches;
         }
     }
-melhorar idsooooo
-    handleTouchEnd() {
+
+    touchEnd() {
         this.touches = [];
     }
 
-    getDistance(touch1, touch2) {
+    getTouchDistance(touch1, touch2) {
         const dx = touch2.clientX - touch1.clientX;
         const dy = touch2.clientY - touch1.clientY;
         return Math.sqrt(dx * dx + dy * dy);
