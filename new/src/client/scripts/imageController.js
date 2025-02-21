@@ -27,15 +27,35 @@ class ImageController {
         this.box.style.display = `flex`;
         this.element.src = this.url;
 
-        this.element.onload = () => {
-            let boxWidth = parseFloat(getComputedStyle(this.box).width);
-            let boxHeight = parseFloat(getComputedStyle(this.box).height);
-            
+
+        const boxSize = this.getSize(this.box);
+        const elementSize = this.getSize(this.element);
+
+        this.element.onload = () => { NAO TA FUNCIONANDO E PRECISA DO GET SIZE TO FIT
             this.position = {
-                x: (boxWidth - this.element.naturalWidth) / 2,
-                y: (boxHeight - this.element.naturalHeight) / 2
+                x: (boxSize.width - elementSize.width) / 2,
+                y: (boxSize.height - elementSize.height) / 2
             };
             this.applyPosition(this.position.x, this.position.y);
+        };
+    }
+
+    getSizeToFit(currentSize, maxSize) {
+        const scale = Math.min(
+            maxSize.width / currentSize.width, 
+            maxSize.height / currentSize.height
+        );
+
+        return {
+            width: currentSize.width * scale,
+            height: currentSize.height * scale
+        };
+    }
+
+    getSize(element) {
+        return { 
+            width: parseFloat(getComputedStyle(element).width),
+            height: parseFloat(getComputedStyle(element).height)
         };
     }
 
